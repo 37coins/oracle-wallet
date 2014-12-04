@@ -1,7 +1,10 @@
 'use strict';
 
+$(function() {
+
 var bitcore = require('bitcore');
 var HierarchicalKey = bitcore.HierarchicalKey;
+var Address = bitcore.Address;
 
 var BIP39 = bitcore.BIP39;
 var BIP39WordlistEn = bitcore.BIP39WordlistEn;
@@ -14,6 +17,17 @@ var seed = BIP39.mnemonic2seed(mnemonic);
 
 var hkey = HierarchicalKey.seed(seed);
 var child = hkey.derive("m/0'");
+
+console.log(child);
+var test_address = Address.fromPubKey(child.eckey._pub).toString();
+console.log(test_address);
+
+var qrcode = new QRCode($("#result")[0], {
+    text: test_address,
+    width: 128,
+    height: 128,
+});
+
 
 var xpub = child.extendedPublicKeyString();
 
@@ -81,3 +95,5 @@ $.ajax({
 });
 
 */
+
+});
