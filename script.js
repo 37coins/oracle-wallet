@@ -53,12 +53,23 @@ $(function() {
     console.log(transactions);
     $("#transactions").html(transactions);
 
+    var address;
+    $.ajax({
+      type: "GET",
+      url: "http://chains-qa.37coins.io/keychains/" + uuid + "/address",
+      async: false,
+      contentType: 'application/json',
+      dataType: 'json',
+      success: function(data) {
+        address = data;
+      }
+    });
 
-    var test_address = Address.fromPubKey(child.eckey._pub).toString();
-    console.log(test_address);
+
+    console.log(address);
 
     var qrcode = new QRCode($("#address")[0], {
-      text: test_address,
+      text: address.address,
       width: 128,
       height: 128,
     });
@@ -141,8 +152,8 @@ $("#new-account").click(function() {
     contentType: 'application/json',
     dataType: 'json'
   });
-
-  */
+*/
+  
   
   display_account();
 
