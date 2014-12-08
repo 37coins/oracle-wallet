@@ -50,9 +50,16 @@ $(function() {
       }
     });
 
-    console.log(transactions);
-    $("#transactions").html(transactions);
-
+    var transaction;
+    
+    for (transaction of transactions.data) {
+      var row = "<tr><td>" + transaction.time_utc + "</td><td>" + transaction.netAmount + "</td></tr>";
+      console.log(row);
+      
+      
+      $("table#transactions tbody").append(row);
+    }
+    
     var address;
     $.ajax({
       type: "GET",
@@ -144,7 +151,7 @@ $("#new-account").click(function() {
     dataType: 'json'
   });
 
-  /*
+/*
   $.ajax({
     type: "POST",
     url: "http://oracle-qa.37coins.io/api/account/" + uuid + "/pin",
@@ -153,7 +160,6 @@ $("#new-account").click(function() {
     dataType: 'json'
   });
 */
-  
   
   display_account();
 
