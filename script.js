@@ -72,7 +72,7 @@ $(function() {
 
     console.log(address);
 
-    var qrcode = new QRCode($("#address")[0], {
+    var qrcode = new QRCode($("#qr")[0], {
       text: address.address,
       width: 128,
       height: 128,
@@ -200,6 +200,15 @@ $("#sign-in").submit(function(event) {
     console.log(wallet);
     display_account();
   });
+});
+
+$("#send").submit(function(event) {
+  event.preventDefault();
+  var address = $("#address").val();
+  
+  if(!Address.validate(address)) {
+    alert("Address is invalid");
+  }
 });
 
 $("#sign-out").click(function(event) {

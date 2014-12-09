@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>37coins Oracle Wallet</title>
-  <link rel="stylesheet" href="loader.css" media="all" />
+  <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <script src="jquery-2.1.1.min.js"></script>
   <script src="uuid.js"></script>
   <script src="bitcore.js"></script>
@@ -17,21 +17,19 @@
 <div id="account-forms">
 <form id="sign-in">
 <label>Mnemonic sentence</label>
-<input id="mnemonics" type="password" autofocus="on" required="true">
-<input type="submit" value="Sign In">
+<textarea id="mnemonics" autofocus="on" required="true" cols="40" rows="5"></textarea>
+<input type="submit" value="Sign in">
 </form>
 
 <form id="new-account">
 <label>Phone number</label>
 <input id="phone" type="tel" required="true">
-<input type="submit" value="New Account">
+<input type="submit" value="New account">
 </form>
 </div>
 
 <div id="account" style="display: none;">
-<input id="sign-out" type="button" value="Sign Out">
 
-<div>
 Unconfirmed balance: <span id="unconfirmed-balance"></span><br />
 Confirmed balance: <span id="confirmed-balance"></span><br />
 Transactions: <br />
@@ -42,8 +40,18 @@ Transactions: <br />
 </tr></thead>
 <tbody></tbody>
 </table>
-<div id="address"></div>
-</div>
+<div id="qr"></div>
+
+<form id="send">
+<label>Amount</label>
+<input id="amount" type="number" required="true" min="0">
+<label>Address</label>
+<input id="address" type="text" required="true" size="34">
+<input type="submit" value="Send">
+<input id="sign-out" type="button" value="Sign out">
+</form>
+
+
 </div>
 
 
