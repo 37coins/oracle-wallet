@@ -14,19 +14,6 @@ $(function() {
   }
 
   function display_account() {
-    var unconfirmed_balance;
-    $.ajax({
-      type: "GET",
-      url: "http://chains-qa.37coins.io/keychains/" + uuid + "/balance/0",
-      async: false,
-      contentType: 'application/json',
-      dataType: 'json',
-      success: function(data) {
-        unconfirmed_balance = data;
-      }
-    });
-    $("#unconfirmed-balance").html(bit_amount(unconfirmed_balance.amount) + " bits");
-    
     var confirmed_balance;
     $.ajax({
       type: "GET",
@@ -35,11 +22,28 @@ $(function() {
       contentType: 'application/json',
       dataType: 'json',
       success: function(data) {
-        confirmed_balance = data;
+        confirmed_balance = data.amount;
       }
     });
 
-    $("#confirmed-balance").html(bit_amount(confirmed_balance.amount) + " bits");
+    var unconfirmed_balance;
+    $.ajax({
+      type: "GET",
+      url: "http://chains-qa.37coins.io/keychains/" + uuid + "/balance/0",
+      async: false,
+      contentType: 'application/json',
+      dataType: 'json',
+      success: function(data) {
+        unconfirmed_balance = data.amount - confirmed_balance;
+      }
+    });
+    
+    if (unconfirmed_balance == 0) {
+      $("#unconfirmed-balance-block").css("display", "none");
+    }
+
+    $("#unconfirmed-balance").html(bit_amount(unconfirmed_balance) + " bits");
+    $("#confirmed-balance").html(bit_amount(confirmed_balance) + " bits");
     
     var transactions;
     $.ajax({
