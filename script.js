@@ -25,6 +25,7 @@ $(function() {
         confirmed_balance = data.amount;
       }
     });
+    $("#confirmed-balance").html(bit_amount(confirmed_balance) + " bits");
 
     var unconfirmed_balance;
     $.ajax({
@@ -34,16 +35,15 @@ $(function() {
       contentType: 'application/json',
       dataType: 'json',
       success: function(data) {
-        unconfirmed_balance = data.amount - confirmed_balance;
+        unconfirmed_balance = data.amount;
       }
     });
     
-    if (unconfirmed_balance == 0) {
+    if (unconfirmed_balance == confirmed_balance) {
       $("#unconfirmed-balance-block").css("display", "none");
     }
 
     $("#unconfirmed-balance").html(bit_amount(unconfirmed_balance) + " bits");
-    $("#confirmed-balance").html(bit_amount(confirmed_balance) + " bits");
     
     var transactions;
     $.ajax({
