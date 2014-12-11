@@ -97,21 +97,30 @@ label, input {
 }
 
 /* line 32, ../sass/screen.scss */
-td.amount {
+table#transactions {
+  border-collapse: separate;
+  border-spacing: 10px 5px;
+}
+/* line 36, ../sass/screen.scss */
+table#transactions th {
+  font-weight: bold;
+}
+/* line 40, ../sass/screen.scss */
+table#transactions td.amount {
   text-align: right;
 }
 
-/* line 36, ../sass/screen.scss */
+/* line 45, ../sass/screen.scss */
 #qrcode img {
   padding: 16px;
 }
 
-/* line 40, ../sass/screen.scss */
+/* line 49, ../sass/screen.scss */
 #loader {
   text-align: center;
 }
 
-/* line 43, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 #loader span {
   display: inline-block;
   vertical-align: middle;
@@ -124,20 +133,20 @@ td.amount {
   -moz-animation: loader 0.9s infinite alternate;
 }
 
-/* line 54, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 #loader span:nth-of-type(2) {
   -webkit-animation-delay: 0.3s;
   -moz-animation-delay: 0.3s;
 }
 
-/* line 58, ../sass/screen.scss */
+/* line 67, ../sass/screen.scss */
 #loader span:nth-of-type(3) {
   -webkit-animation-delay: 0.6s;
   -moz-animation-delay: 0.6s;
 }
 
 @-webkit-keyframes loader {
-  /* line 63, ../sass/screen.scss */
+  /* line 72, ../sass/screen.scss */
   0% {
     width: 10px;
     height: 10px;
@@ -145,7 +154,7 @@ td.amount {
     -webkit-transform: translateY(0);
   }
 
-  /* line 69, ../sass/screen.scss */
+  /* line 78, ../sass/screen.scss */
   100% {
     width: 24px;
     height: 24px;
@@ -155,7 +164,7 @@ td.amount {
 }
 
 @-moz-keyframes loader {
-  /* line 77, ../sass/screen.scss */
+  /* line 86, ../sass/screen.scss */
   0% {
     width: 10px;
     height: 10px;
@@ -163,7 +172,7 @@ td.amount {
     -moz-transform: translateY(0);
   }
 
-  /* line 83, ../sass/screen.scss */
+  /* line 92, ../sass/screen.scss */
   100% {
     width: 24px;
     height: 24px;

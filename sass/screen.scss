@@ -29,8 +29,17 @@ label, input {
   display: block;
 }
 
-td.amount {
-  text-align: right;
+table#transactions {
+  border-collapse: separate;
+  border-spacing: 10px 5px;
+  
+  th {
+    font-weight: bold;
+  }
+
+  td.amount {
+    text-align: right;
+  }
 }
 
 #qrcode img {

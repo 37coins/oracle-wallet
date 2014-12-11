@@ -60,7 +60,8 @@ $(function() {
     var transaction;
     
     for (transaction of transactions.data) {
-      var row = "<tr><td>" + transaction.time_utc + '</td><td class="amount">' + bit_amount(transaction.netAmount) + "</td></tr>";
+      var d = new Date(transaction.time_utc);
+      var row = '<tr><td class="time">' + d.toLocaleString() + '</td><td class="amount">' + bit_amount(transaction.netAmount) + "</td></tr>";
       console.log(row);
       
       $("table#transactions tbody").append(row);
