@@ -42,6 +42,9 @@ $(function() {
     if (unconfirmed_balance == confirmed_balance) {
       $("#unconfirmed-balance-block").css("display", "none");
     }
+    else {
+      $("#unconfirmed-balance-block").css("display", "block");
+    }
 
     $("#unconfirmed-balance").html(bit_amount(unconfirmed_balance) + " bits");
     
@@ -57,12 +60,12 @@ $(function() {
       }
     });
 
+    $("table#transactions tbody").empty();
+
     var transaction;
-    
     for (transaction of transactions.data) {
       var d = new Date(transaction.time_utc);
       var row = '<tr><td class="time">' + d.toLocaleString() + '</td><td class="amount">' + bit_amount(transaction.netAmount) + "</td></tr>";
-      console.log(row);
       
       $("table#transactions tbody").append(row);
     }
@@ -221,7 +224,16 @@ $("#send").submit(function(event) {
   }
 });
 
+$("#refresh").click(function(event) {
+  event.preventDefault();
+  $("#account").fadeOut('fast', function () {
+    $("#loader").css("display", "block");
+    display_account();
+  });
+});
+
 $("#sign-out").click(function(event) {
+  event.preventDefault();
   $('body').fadeOut('fast', function () {
     window.location.reload(true);
   });

@@ -29,6 +29,10 @@ label, input {
   display: block;
 }
 
+input {
+  margin-bottom: 5px;
+}
+
 table#transactions {
   border-collapse: separate;
   border-spacing: 10px 5px;
