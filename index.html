@@ -20,10 +20,10 @@
 <label>Mnemonic sentence</label>
 <textarea id="mnemonics" autofocus="on" required="true" cols="40" rows="5"></textarea>
 <input type="submit" value="Sign in">
-</form>
 <div id="error" style="display: none;">
 Error: account not found.
 </div>
+</form>
 
 <form id="new-account">
 <h1>New Account</h1>
@@ -31,6 +31,7 @@ Error: account not found.
 <input id="phone" type="tel" required="true">
 <input type="submit" value="New account">
 </form>
+<div id="error-new"></div>
 </div>
 
 <div id="account" style="display: none;">
@@ -46,6 +47,7 @@ Error: account not found.
 
 <h1>Transactions</h1>
 <table id="transactions">
+<div id="no-transactions"><em>No transactions.</em></div>
 <thead><tr>
 <th>Time</th>
 <th>Amount (bits)</th>

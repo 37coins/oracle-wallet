@@ -62,6 +62,15 @@ $(function() {
 
     $("table#transactions tbody").empty();
 
+    if (transactions.data.length > 0) {
+      $("#no-transactions").css("display", "none");
+      $("table#transactions").css("display", "block");
+    }
+    else {
+      $("#no-transactions").css("display", "block");
+      $("table#transactions").css("display", "none");
+    }
+
     var transaction;
     for (transaction of transactions.data) {
       var d = new Date(transaction.time_utc);
@@ -113,13 +122,9 @@ $("#new-account").submit(function(event) {
     child = hkey.derive("m/0'");
 
     var xpub = child.extendedPublicKeyString();
-
-
     console.log(xpub);
 
-
     uuid = UUID.v5(xpub, "urn:37coins.com");
-
     console.log(uuid);
 
     var account = {
@@ -143,44 +148,48 @@ $("#new-account").submit(function(event) {
       },
       contentType: 'application/json',
       dataType: 'json'
+    }).fail(function(jqXHR, textStatus) {
+      $("#loader").css("display", "none");
+      $("#error-new").html("Error");
+      $("#account-forms").css("display", "block");
+      return;
+    }).done(function() {
+      console.log(oracle_xpub);
+      var account = {
+        "walletAgent": "",
+        "keys": [
+          xpub,
+          oracle_xpub
+        ],
+        "requiredSigCount" : 2
+      }
+
+      $.ajax({
+        type: "POST",
+        url: "http://chains-qa.37coins.io/keychains/" + uuid,
+        async: false,
+        data: JSON.stringify(account),
+        success: function(data, textStatus, jqXHR) {
+          console_log(textStatus);
+        },
+        contentType: 'application/json',
+        dataType: 'json'
+      });
+
+    /*
+      $.ajax({
+        type: "POST",
+        url: "http://oracle-qa.37coins.io/api/account/" + uuid + "/pin",
+        async: false,
+        contentType: 'application/json',
+        dataType: 'json'
+      });
+    */
+
+      alert("Account created. Write down the following mnemonic sentence and keep it safe. It is the only way to access your account: " + mnemonic);
+
+      window.location.reload(true);
     });
-
-    console.log(oracle_xpub);
-
-    var account = {
-      "walletAgent": "",
-      "keys": [
-        xpub,
-        oracle_xpub
-      ],
-      "requiredSigCount" : 2
-    }
-
-    $.ajax({
-      type: "POST",
-      url: "http://chains-qa.37coins.io/keychains/" + uuid,
-      async: false,
-      data: JSON.stringify(account),
-      success: function(data, textStatus, jqXHR) {
-        console_log(textStatus);
-      },
-      contentType: 'application/json',
-      dataType: 'json'
-    });
-
-  /*
-    $.ajax({
-      type: "POST",
-      url: "http://oracle-qa.37coins.io/api/account/" + uuid + "/pin",
-      async: false,
-      contentType: 'application/json',
-      dataType: 'json'
-    });
-  */
-
-    alert("Account created. Write down the following mnemonic sentence and keep it safe. It is the only way to access your account: " + mnemonic);
-
-    window.location.reload(true);
   });
 });
 
