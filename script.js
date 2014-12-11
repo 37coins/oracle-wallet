@@ -208,10 +208,15 @@ $("#sign-in").submit(function(event) {
       async: false,
       contentType: 'application/json',
       dataType: 'json'
+    }).fail(function() {
+      $("#loader").css("display", "none");
+      $("#error").css("display", "block");
+      $("#account-forms").css("display", "block");
+      return;
+    }).done(function() {
+      console.log(wallet);
+      display_account();
     });
-    
-    console.log(wallet);
-    display_account();
   });
 });
 
