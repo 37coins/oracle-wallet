@@ -70,70 +70,71 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 8, ../sass/screen.scss */
 body {
   margin: 20px;
+  font-family: sans-serif;
 }
 
-/* line 12, ../sass/screen.scss */
+/* line 13, ../sass/screen.scss */
 h1 {
   font-size: 24px;
   font-weight: bold;
   margin: 20px 0 10px 0;
 }
 
-/* line 18, ../sass/screen.scss */
+/* line 19, ../sass/screen.scss */
 em {
   font-style: italic;
 }
 
-/* line 22, ../sass/screen.scss */
+/* line 23, ../sass/screen.scss */
 .balance {
   font-size: 32px;
   font-weight: bold;
   padding: 20px;
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 29, ../sass/screen.scss */
 #receive-address {
   font-family: monospace;
 }
 
-/* line 32, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 label, input {
   display: block;
 }
 
-/* line 36, ../sass/screen.scss */
+/* line 37, ../sass/screen.scss */
 input {
   margin-bottom: 5px;
 }
 
-/* line 41, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 table#transactions th, table#transactions td {
   padding: 5px;
 }
-/* line 45, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 table#transactions th {
   font-weight: bold;
 }
-/* line 49, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 table#transactions td.amount {
   text-align: right;
 }
-/* line 53, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 table#transactions tbody tr:nth-child(odd) {
   background-color: #f5f5f2;
 }
 
-/* line 58, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 #qrcode img {
   padding: 16px;
 }
 
-/* line 62, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 #loader {
   text-align: center;
 }
 
-/* line 65, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 #loader span {
   display: inline-block;
   vertical-align: middle;
@@ -146,20 +147,20 @@ table#transactions tbody tr:nth-child(odd) {
   -moz-animation: loader 0.9s infinite alternate;
 }
 
-/* line 76, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #loader span:nth-of-type(2) {
   -webkit-animation-delay: 0.3s;
   -moz-animation-delay: 0.3s;
 }
 
-/* line 80, ../sass/screen.scss */
+/* line 81, ../sass/screen.scss */
 #loader span:nth-of-type(3) {
   -webkit-animation-delay: 0.6s;
   -moz-animation-delay: 0.6s;
 }
 
 @-webkit-keyframes loader {
-  /* line 85, ../sass/screen.scss */
+  /* line 86, ../sass/screen.scss */
   0% {
     width: 10px;
     height: 10px;
@@ -167,7 +168,7 @@ table#transactions tbody tr:nth-child(odd) {
     -webkit-transform: translateY(0);
   }
 
-  /* line 91, ../sass/screen.scss */
+  /* line 92, ../sass/screen.scss */
   100% {
     width: 24px;
     height: 24px;
@@ -177,7 +178,7 @@ table#transactions tbody tr:nth-child(odd) {
 }
 
 @-moz-keyframes loader {
-  /* line 99, ../sass/screen.scss */
+  /* line 100, ../sass/screen.scss */
   0% {
     width: 10px;
     height: 10px;
@@ -185,7 +186,7 @@ table#transactions tbody tr:nth-child(odd) {
     -moz-transform: translateY(0);
   }
 
-  /* line 105, ../sass/screen.scss */
+  /* line 106, ../sass/screen.scss */
   100% {
     width: 24px;
     height: 24px;

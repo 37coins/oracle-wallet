@@ -105,6 +105,7 @@ $(function() {
 
     $("#loader").css("display", "none");
     $("#account").css("display", "block");
+    scroll(0,0);
   }
 
 $("#new-account").submit(function(event) {
