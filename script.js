@@ -71,11 +71,15 @@ $(function() {
     });
 
     console.log(address);
+    
+    var uri = 'bitcoin:' + address.address;
+    $("#qr").html('<a id="qrcode" href="' + uri + '"></a>');
 
-    var qrcode = new QRCode($("#qr")[0], {
-      text: address.address,
+    var qrcode = new QRCode($("#qrcode")[0], {
+      text: uri,
       width: 128,
       height: 128,
+      correctLevel: QRCode.CorrectLevel.L
     });
 
     $("#loader").css("display", "none");

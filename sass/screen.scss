@@ -9,6 +9,10 @@ label, input {
   display: block;
 }
 
+#qrcode img {
+  padding: 16px;
+}
+
 #loader {
     text-align: center;    
 }
