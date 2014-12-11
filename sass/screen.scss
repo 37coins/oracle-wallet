@@ -5,6 +5,10 @@
 
 @import "compass/reset";
 
+body {
+  padding: 20px;
+}
+
 label, input {
   display: block;
 }

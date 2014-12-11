@@ -68,26 +68,31 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 8, ../sass/screen.scss */
+body {
+  padding: 20px;
+}
+
+/* line 12, ../sass/screen.scss */
 label, input {
   display: block;
 }
 
-/* line 12, ../sass/screen.scss */
+/* line 16, ../sass/screen.scss */
 td.amount {
   text-align: right;
 }
 
-/* line 16, ../sass/screen.scss */
+/* line 20, ../sass/screen.scss */
 #qrcode img {
   padding: 16px;
 }
 
-/* line 20, ../sass/screen.scss */
+/* line 24, ../sass/screen.scss */
 #loader {
   text-align: center;
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 27, ../sass/screen.scss */
 #loader span {
   display: inline-block;
   vertical-align: middle;
@@ -100,20 +105,20 @@ td.amount {
   -moz-animation: loader 0.9s infinite alternate;
 }
 
-/* line 34, ../sass/screen.scss */
+/* line 38, ../sass/screen.scss */
 #loader span:nth-of-type(2) {
   -webkit-animation-delay: 0.3s;
   -moz-animation-delay: 0.3s;
 }
 
-/* line 38, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 #loader span:nth-of-type(3) {
   -webkit-animation-delay: 0.6s;
   -moz-animation-delay: 0.6s;
 }
 
 @-webkit-keyframes loader {
-  /* line 43, ../sass/screen.scss */
+  /* line 47, ../sass/screen.scss */
   0% {
     width: 10px;
     height: 10px;
@@ -121,7 +126,7 @@ td.amount {
     -webkit-transform: translateY(0);
   }
 
-  /* line 49, ../sass/screen.scss */
+  /* line 53, ../sass/screen.scss */
   100% {
     width: 24px;
     height: 24px;
@@ -131,7 +136,7 @@ td.amount {
 }
 
 @-moz-keyframes loader {
-  /* line 57, ../sass/screen.scss */
+  /* line 61, ../sass/screen.scss */
   0% {
     width: 10px;
     height: 10px;
@@ -139,7 +144,7 @@ td.amount {
     -moz-transform: translateY(0);
   }
 
-  /* line 63, ../sass/screen.scss */
+  /* line 67, ../sass/screen.scss */
   100% {
     width: 24px;
     height: 24px;
