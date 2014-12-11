@@ -9,6 +9,10 @@ $(function() {
   var child;
   var uuid;
 
+  function bit_amount(satoshis) {
+    return new Intl.NumberFormat().format(Math.floor(satoshis / 100));
+  }
+
   function display_account() {
     var unconfirmed_balance;
     $.ajax({
@@ -21,7 +25,7 @@ $(function() {
         unconfirmed_balance = data;
       }
     });
-    $("#unconfirmed-balance").html(unconfirmed_balance.amount);
+    $("#unconfirmed-balance").html(bit_amount(unconfirmed_balance.amount) + " bits");
     
     var confirmed_balance;
     $.ajax({
@@ -35,7 +39,7 @@ $(function() {
       }
     });
 
-    $("#confirmed-balance").html(confirmed_balance.amount);
+    $("#confirmed-balance").html(bit_amount(confirmed_balance.amount) + " bits");
     
     var transactions;
     $.ajax({
@@ -52,7 +56,7 @@ $(function() {
     var transaction;
     
     for (transaction of transactions.data) {
-      var row = "<tr><td>" + transaction.time_utc + "</td><td>" + transaction.netAmount + "</td></tr>";
+      var row = "<tr><td>" + transaction.time_utc + '</td><td class="amount">' + bit_amount(transaction.netAmount) + "</td></tr>";
       console.log(row);
       
       $("table#transactions tbody").append(row);

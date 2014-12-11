@@ -9,6 +9,10 @@ label, input {
   display: block;
 }
 
+td.amount {
+  text-align: right;
+}
+
 #qrcode img {
   padding: 16px;
 }
