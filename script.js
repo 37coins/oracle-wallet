@@ -173,9 +173,7 @@ $("#sign-in").submit(function(event) {
   $("#account-forms").fadeOut('fast', function () {
     $("#loader").css("display", "block");
     var mnemonic = $("#mnemonics").val();
-    console.log(mnemonic);
-    var seed = BIP39.mnemonic2seed(mnemonic);
-
+    var seed = BIP39.mnemonic2seed(mnemonic.trim().toLowerCase());
 
     var hkey = HierarchicalKey.seed(seed);
     child = hkey.derive("m/0'");
