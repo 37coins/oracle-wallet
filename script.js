@@ -78,16 +78,15 @@ $(function() {
       height: 128,
     });
 
-    $("#loader").hide();
-    $("#account").show();
+    $("#loader").css("display", "none");
+    $("#account").css("display", "block");
   }
 
 $("#new-account").submit(function(event) {
   event.preventDefault();
   $("#account-forms").fadeOut('fast', function () {
-    $("#loader").show();
-    
-    
+    $("#loader").css("display", "block");
+
     var phone = $("#phone").val();
     console.log(phone);
 
@@ -172,7 +171,7 @@ $("#new-account").submit(function(event) {
 $("#sign-in").submit(function(event) {
   event.preventDefault();
   $("#account-forms").fadeOut('fast', function () {
-    $("#loader").show();
+    $("#loader").css("display", "block");
     var mnemonic = $("#mnemonics").val();
     console.log(mnemonic);
     var seed = BIP39.mnemonic2seed(mnemonic);
