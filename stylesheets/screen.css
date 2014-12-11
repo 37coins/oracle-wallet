@@ -101,31 +101,34 @@ input {
   margin-bottom: 5px;
 }
 
-/* line 36, ../sass/screen.scss */
-table#transactions {
-  border-collapse: separate;
-  border-spacing: 10px 5px;
+/* line 37, ../sass/screen.scss */
+table#transactions th, table#transactions td {
+  padding: 5px;
 }
-/* line 40, ../sass/screen.scss */
+/* line 41, ../sass/screen.scss */
 table#transactions th {
   font-weight: bold;
 }
-/* line 44, ../sass/screen.scss */
+/* line 45, ../sass/screen.scss */
 table#transactions td.amount {
   text-align: right;
 }
-
 /* line 49, ../sass/screen.scss */
+table#transactions tr:nth-child(even) {
+  background-color: #f5f5f2;
+}
+
+/* line 54, ../sass/screen.scss */
 #qrcode img {
   padding: 16px;
 }
 
-/* line 53, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
 #loader {
   text-align: center;
 }
 
-/* line 56, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 #loader span {
   display: inline-block;
   vertical-align: middle;
@@ -138,20 +141,20 @@ table#transactions td.amount {
   -moz-animation: loader 0.9s infinite alternate;
 }
 
-/* line 67, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
 #loader span:nth-of-type(2) {
   -webkit-animation-delay: 0.3s;
   -moz-animation-delay: 0.3s;
 }
 
-/* line 71, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 #loader span:nth-of-type(3) {
   -webkit-animation-delay: 0.6s;
   -moz-animation-delay: 0.6s;
 }
 
 @-webkit-keyframes loader {
-  /* line 76, ../sass/screen.scss */
+  /* line 81, ../sass/screen.scss */
   0% {
     width: 10px;
     height: 10px;
@@ -159,7 +162,7 @@ table#transactions td.amount {
     -webkit-transform: translateY(0);
   }
 
-  /* line 82, ../sass/screen.scss */
+  /* line 87, ../sass/screen.scss */
   100% {
     width: 24px;
     height: 24px;
@@ -169,7 +172,7 @@ table#transactions td.amount {
 }
 
 @-moz-keyframes loader {
-  /* line 90, ../sass/screen.scss */
+  /* line 95, ../sass/screen.scss */
   0% {
     width: 10px;
     height: 10px;
@@ -177,7 +180,7 @@ table#transactions td.amount {
     -moz-transform: translateY(0);
   }
 
-  /* line 96, ../sass/screen.scss */
+  /* line 101, ../sass/screen.scss */
   100% {
     width: 24px;
     height: 24px;
