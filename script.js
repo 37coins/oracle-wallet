@@ -74,13 +74,13 @@ $(function() {
       contentType: 'application/json',
       dataType: 'json',
       success: function(data) {
-        address = data;
+        address = data.address;
       }
     });
 
-    console.log(address);
+    $("#receive-address").html(address);
     
-    var uri = 'bitcoin:' + address.address;
+    var uri = 'bitcoin:' + address;
     $("#qr").html('<a id="qrcode" href="' + uri + '"></a>');
 
     var qrcode = new QRCode($("#qrcode")[0], {

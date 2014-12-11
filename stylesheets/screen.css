@@ -87,26 +87,31 @@ h1 {
 }
 
 /* line 24, ../sass/screen.scss */
+#receive-address {
+  font-family: monospace;
+}
+
+/* line 28, ../sass/screen.scss */
 label, input {
   display: block;
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 td.amount {
   text-align: right;
 }
 
-/* line 32, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 #qrcode img {
   padding: 16px;
 }
 
-/* line 36, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 #loader {
   text-align: center;
 }
 
-/* line 39, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 #loader span {
   display: inline-block;
   vertical-align: middle;
@@ -119,20 +124,20 @@ td.amount {
   -moz-animation: loader 0.9s infinite alternate;
 }
 
-/* line 50, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 #loader span:nth-of-type(2) {
   -webkit-animation-delay: 0.3s;
   -moz-animation-delay: 0.3s;
 }
 
-/* line 54, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
 #loader span:nth-of-type(3) {
   -webkit-animation-delay: 0.6s;
   -moz-animation-delay: 0.6s;
 }
 
 @-webkit-keyframes loader {
-  /* line 59, ../sass/screen.scss */
+  /* line 63, ../sass/screen.scss */
   0% {
     width: 10px;
     height: 10px;
@@ -140,7 +145,7 @@ td.amount {
     -webkit-transform: translateY(0);
   }
 
-  /* line 65, ../sass/screen.scss */
+  /* line 69, ../sass/screen.scss */
   100% {
     width: 24px;
     height: 24px;
@@ -150,7 +155,7 @@ td.amount {
 }
 
 @-moz-keyframes loader {
-  /* line 73, ../sass/screen.scss */
+  /* line 77, ../sass/screen.scss */
   0% {
     width: 10px;
     height: 10px;
@@ -158,7 +163,7 @@ td.amount {
     -moz-transform: translateY(0);
   }
 
-  /* line 79, ../sass/screen.scss */
+  /* line 83, ../sass/screen.scss */
   100% {
     width: 24px;
     height: 24px;
