@@ -70,7 +70,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 8, ../sass/screen.scss */
 body {
   margin: 20px;
-  font-family: sans-serif;
+  font-family: sans;
 }
 
 /* line 13, ../sass/screen.scss */
