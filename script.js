@@ -130,7 +130,7 @@ $("#new-account").submit(function(event) {
 
     var account = {
         "phone": phone,
-        limit: 1000000,
+        "limit": $("#limit").val() * 100,
         "xpubs": [
             xpub
         ],
